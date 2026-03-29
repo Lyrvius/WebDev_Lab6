@@ -31,7 +31,11 @@ function CreateField(rows, cols, values) {
         for (let j = 0; j < cols; j++) {
             let cell = document.createElement('td');
             let size = GetRandomInt(15, 23); // Random font size for each cell
+
             cell.style.fontSize = size + 'px';
+            cell.style.color = `rgb(${GetRandomInt(0, 255)}, 
+                                    ${GetRandomInt(0, 255)}, 
+                                    ${GetRandomInt(0, 255)})`; // Random color for each cell
             cell.textContent = values[i * cols + j];
             row.appendChild(cell);
         }
