@@ -1,0 +1,89 @@
+:root{
+    --cell-bg-color: white;
+    --cell-highlighted-color: #c7fdb7;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 300px;
+    min-height: 100dvh;
+    background-color: #5a5a5a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    border-right: 1px solid #000;
+}
+
+.level-selector{
+    width: 100%;
+    margin-top: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 7px 20px;
+}
+
+li a:hover {
+    background-color: #fff;
+    color: #5a5a5a;
+    transition: 0.3s;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+td {
+    background-color: var(--cell-bg-color);
+    border: 1px solid #000;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td:hover {
+    background-color: color-mix(in srgb, var(--cell-bg-color), black 20%);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.highlighted {
+    background-color: var(--cell-highlighted-color);
+}
+
+.highlighted:hover {
+    background-color: color-mix(in srgb, var(--cell-highlighted-color), black 15%);
+    cursor: pointer;
+    transition: 0.3s;
+}
