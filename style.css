@@ -1,6 +1,7 @@
 :root{
     --cell-bg-color: white;
     --cell-highlighted-color: #c7fdb7;
+    --sidebar-width: 300px;
 }
 
 *{
@@ -15,19 +16,30 @@ body {
 }
 
 .sidebar {
-    width: 300px;
-    min-height: 100dvh;
-    background-color: #5a5a5a;
-    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: fixed;
+    width: var(--sidebar-width);
+    height: 100dvh;
+    background-color: #5a5a5a;
+    color: #fff;
     padding-top: 20px;
     border-right: 1px solid #000;
 }
 
+main{
+    margin-left: var(--sidebar-width);
+}
+
+.logo {
+    flex-shrink: 0;
+}
+
 .level-selector{
     width: 100%;
+    overflow-y: auto;
+    flex-grow: 1;
     margin-top: 20px;
 }
 
