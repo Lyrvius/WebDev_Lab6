@@ -87,3 +87,8 @@ td:hover {
     cursor: pointer;
     transition: 0.3s;
 }
+
+#timer-display {
+    font-size: 1.2em;
+    margin-top: 10px;
+}

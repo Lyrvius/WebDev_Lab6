@@ -4,6 +4,8 @@ let rows = 1;
 let cols = 1;
 let currentLevel = 1;
 let nextValue = 1;
+let timerInterval;
+let seconds = 0;
 
 SetLevel(rows, cols, 1); // Initialize the first level
 
@@ -52,6 +54,28 @@ function SetLevel(newRows, newCols, level) { // Change the field to the new leve
     field.innerHTML = '';
     nextValue = 1;
     let fieldValues = ShuffleArray(GenerateArray(rows * cols));
+
+    if (timerInterval) { // Clear existing timer if it exists
+        clearInterval(timerInterval);
+    }
+
+    seconds = 0;
+    document.getElementById('timer-display').textContent = "00:00";
+
+    timerInterval = setInterval(function() { // Increment seconds and update the timer display every second
+        seconds++;
+        
+        // Convert seconds to minutes and seconds for display
+        let mins = Math.floor(seconds / 60);
+        let secs = seconds % 60;
+        
+        let timeString = 
+            String(mins).padStart(2, '0') + ":" + 
+            String(secs).padStart(2, '0');
+            
+        document.getElementById('timer-display').textContent = timeString;
+    }, 1000);
+
     CreateField(rows, cols, fieldValues);
 }
 
